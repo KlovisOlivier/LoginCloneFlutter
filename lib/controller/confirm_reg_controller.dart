@@ -1,7 +1,11 @@
 import 'package:get/get.dart';
 
 class ConfirmRegController extends GetxController {
-  late String nama;
+ late String nama;
+ late String jenisKelamin;
+ late String alamat;
+ late String email;
+ late String noHp;
 
   @override
   void onInit() {
@@ -9,5 +13,9 @@ class ConfirmRegController extends GetxController {
     super.onInit();
     final arguments = Get.arguments;
     nama = arguments['name'];
+    jenisKelamin = arguments['jenis_kelamin'];
+    alamat = arguments['alamat'];
+    email = arguments['email'];
+    noHp = arguments['no_hp'];
   }
 }
