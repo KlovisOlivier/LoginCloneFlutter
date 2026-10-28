@@ -84,8 +84,6 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
-
-              // Tombol Menu
               _buildMenuButton(Icons.forum_rounded, 'Discord'),
               const SizedBox(height: 8),
               _buildMenuButton(Icons.currency_bitcoin, 'Donasi'),

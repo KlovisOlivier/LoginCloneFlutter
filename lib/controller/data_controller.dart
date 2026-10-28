@@ -13,7 +13,7 @@ class DataController extends GetxController {
       namaMakanan: "Star Ginseng Store",
       hargaMakanan: "Hyuno",
       asalUsul: "Slice of Life, Comedy, Romance",
-      gambarMakanan: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-rM6H_ZUd8rGPuSTvhY3XD-lTbPA6xrYtIiLYxDYH5YsS_vO3ZQOibDS4&s=10",
+      gambarMakanan: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLJ0btVj62t5HW5tj32qZf4srpYO7kXE_cF_vFC--F7Q&s=10",
     ),
     MakananModel(
       namaMakanan: "My Bias Get On Last Train",
@@ -22,16 +22,16 @@ class DataController extends GetxController {
       gambarMakanan: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIU5SH78p8PgoDfVc_VAQJXqfr9cXMhxF0tqOcJNnsxl8T4bK0fSYspTY&s=10",
     ),
     MakananModel(
-      namaMakanan: "Cyberpunk 2077",
+      namaMakanan: "Existence",
       hargaMakanan: "600.000",
-      asalUsul: "Game RPG open-world bertema masa depan.",
-      gambarMakanan: "https://images.unsplash.com/photo-1542751110-97427bbecf20",
+      asalUsul: "Aksi, Drama, Fantasi, Seinen",
+      gambarMakanan: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQniRYK9mklu_0T2BW0HXA9ICCCREjAkVbxa8Hmbem36g&s=10",
     ),
     MakananModel(
-      namaMakanan: "Elden Ring",
+      namaMakanan: "Player",
       hargaMakanan: "700.000",
-      asalUsul: "Game petualangan fantasi gelap yang menantang.",
-      gambarMakanan: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc",
+      asalUsul: "Aksi, Fantasi, Supernatural",
+      gambarMakanan: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTnEEPvIZI8DlyNuSh8aMSohZFVszqIvTIItsOMb8OqQ&s=10",
     ),
   ].obs;
 }

@@ -10,12 +10,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("List game")),
+      appBar: AppBar(title: const Text("List Komik"),
+      ),
       body: Container(
         margin: const EdgeInsets.all(10),
         child: Obx(
           () => SizedBox(
-            height: 320, // Ditinggikan dari 240 ke 320
+            height:360,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: dataController.listData.length,
@@ -25,7 +26,7 @@ class HomePage extends StatelessWidget {
                 return InkWell(
                   onTap: () {},
                   child: Card(
-                    clipBehavior: Clip.antiAlias, // Agar sudut gambar melengkung mengikuti Card
+                    clipBehavior: Clip.antiAlias,
                     elevation: 4,
                     margin: const EdgeInsets.symmetric(horizontal: 8),
                     child: SizedBox(
@@ -35,7 +36,7 @@ class HomePage extends StatelessWidget {
                         children: [
                           Image.network(
                             makanan.gambarMakanan,
-                            height: 220, // Ditinggikan agar gambar terlihat lebih luas
+                            height: 200,
                             width: double.infinity,
                             fit: BoxFit.cover,
                           ),
@@ -46,6 +47,8 @@ class HomePage extends StatelessWidget {
                               children: [
                                 Text(
                                   makanan.namaMakanan,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
@@ -54,6 +57,8 @@ class HomePage extends StatelessWidget {
                                 const SizedBox(height: 4),
                                 Text(
                                   makanan.asalUsul,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
                                     fontSize: 14,
                                     color: Colors.green,
