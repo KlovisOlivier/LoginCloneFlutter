@@ -1,8 +1,8 @@
 class MakananModel {
-  final String namaMakanan;
-  final String hargaMakanan;
-  final String gambarMakanan; // link gambar
-  final String asalUsul;
+  String namaMakanan;
+  String hargaMakanan;
+  String gambarMakanan;
+  String asalUsul;
 
   MakananModel({
     required this.namaMakanan,
