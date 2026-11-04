@@ -36,7 +36,7 @@ class ConfirmRegPage extends StatelessWidget {
 
           ElevatedButton(
             onPressed: () {
-              Get.back(); // kembali ke halaman sebelumnya
+              Get.back();
             },
             child: Text("Oke"),
           ),

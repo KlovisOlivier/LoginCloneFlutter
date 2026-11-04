@@ -5,6 +5,7 @@ import 'package:pakaji/pages/detail_makanan_pages.dart';
 import 'package:pakaji/pages/list_makanan_page.dart';
 import 'package:pakaji/Pages/menu_drawer.dart';
 import 'package:pakaji/pages/registration_page.dart';
+import 'package:pakaji/pages/login_clone_page.dart';
 
 class Routes {
   static const String registration = '/registration';
@@ -13,6 +14,7 @@ class Routes {
   static const String detailmakanan = '/detail-makanan';
   static const String mainmenu = '/main-menu';
   static const String drawer = '/drawer';
+  static const String loginClone = '/login-clone';
   // other pages here
 
  // untuk kita daftarkan di main dart, isinya array page yang kita punya
@@ -40,6 +42,10 @@ class Routes {
     GetPage(
       name: drawer,
       page: () => MenuDrawer()
+    ),
+    GetPage(
+      name: loginClone,
+      page: () => LoginClonePage()
     ),
   ];
 }

@@ -38,8 +38,6 @@ class KalkulatorPage extends StatelessWidget {
               isNumberOnly: true,
             ),
             const SizedBox(height: 24),
-            
-            // Baris Tombol Operasi
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.indigo,
