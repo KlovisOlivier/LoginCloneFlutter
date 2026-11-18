@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:pakaji/Pages/main_menu_page.dart';
 
-class LoginApiController extends GetxController {
+class LoginController extends GetxController {
 
   TextEditingController txtUsername = TextEditingController();
   TextEditingController txtPassword = TextEditingController();

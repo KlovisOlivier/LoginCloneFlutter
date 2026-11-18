@@ -1,66 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:pakaji/components/custom_textfield.dart';
+import 'package:get/get.dart';
+import 'package:pakaji/controller/login_controller.dart';
+import 'package:pakaji/widgets/custom_button.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class LoginPage extends StatelessWidget {
+  LoginPage({Key? key}) : super(key: key);
 
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
+  final controller = Get.put(LoginController());
 
-
-class _LoginPageState extends State<LoginPage> {
-  TextEditingController txtUsername = TextEditingController();
-    TextEditingController txtPassword = TextEditingController();
-    String statuslogin = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Login Page"),
-      ),
-      body: Column(
-        children: [
-          Text("Welcome to the Login Page" + statuslogin.toString(), style: TextStyle(fontSize: 24, color: Colors.blue, fontStyle: FontStyle.italic)),
-          Container(
-            margin: EdgeInsets.all(10),
-            child: CustomTextfield(
-              isNumberOnly: false,
-              txtController: txtUsername,
-              myHint: "input username",
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-          child: CustomTextfield(
-            isNumberOnly: false,
-            txtController: txtPassword,
-            myHint: "input password",
-          ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+      appBar: AppBar(title: Text("Login Page")),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              ElevatedButton(onPressed: () {
-                String username = txtUsername.text.toString();
-                String password = txtPassword.text.toString();
-                if(username == "admin" && password == "password") {
-                  setState(() {
-                    statuslogin = " - Admin";
-                  });
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Login Sukses")));
-                } else {
-                  setState(() {
-                    statuslogin = " - Gagal";
-                  });
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Login Gagal")));
-                }
-              },child : Text("Login")),
-              ElevatedButton(onPressed: () {},child : Text("Register")),
+              const SizedBox(height: 40),
+              TextField(
+                controller: controller.txtUsername,
+                decoration: const InputDecoration(
+                  hintText: 'Username',
+                ),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: controller.txtPassword,
+                obscureText: true,
+                decoration: const InputDecoration(hintText: 'Password'),
+              ),
+              const SizedBox(height: 18),
+              Obx(
+                () => controller.isLoading.value
+                    ? const CircularProgressIndicator()
+                    : CustomButton(
+                        child: Text("Login"),
+                        onPressed: () {
+                          controller.login();
+                        },
+                      ),
+              ),
             ],
-            ),
-          ],
+          ),
         ),
+      ),
     );
   }
 }

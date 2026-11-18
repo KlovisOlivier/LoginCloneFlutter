@@ -1,51 +1,20 @@
 import 'package:get/get.dart';
+import 'package:pakaji/Pages/login_page.dart';
 import 'package:pakaji/Pages/main_menu_page.dart';
-import 'package:pakaji/pages/confirm_reg_page.dart';
-import 'package:pakaji/pages/detail_makanan_pages.dart';
-import 'package:pakaji/pages/list_makanan_page.dart';
-import 'package:pakaji/Pages/menu_drawer.dart';
-import 'package:pakaji/pages/registration_page.dart';
-import 'package:pakaji/pages/login_clone_page.dart';
 
 class Routes {
-  static const String registration = '/registration';
-  static const String confirmReg = '/confirm-reg';
-  static const String list_makanan = '/list-makanan';
-  static const String detailmakanan = '/detail-makanan';
-  static const String mainmenu = '/main-menu';
-  static const String drawer = '/drawer';
-  static const String loginClone = '/login-clone';
-  // other pages here
+  static const String login_page = '/login-page';
+  static const String main_menu_page = '/main-menu-page';
 
  // untuk kita daftarkan di main dart, isinya array page yang kita punya
   static final pages = [
     GetPage(
-      name: registration,
-      page: () => RegistrationPage()
+      name: login_page,
+      page: () => LoginPage()
     ),
     GetPage(
-      name: confirmReg,
-      page: () => ConfirmRegPage()
-    ),
-    GetPage(
-      name: list_makanan,
-      page: () => ListMakananPage()
-    ),
-    GetPage(
-      name: detailmakanan,
-      page: () => DetailMakananPages()
-    ),
-    GetPage(
-      name: mainmenu,
+      name: main_menu_page,
       page: () => MainMenuPage()
-    ),
-    GetPage(
-      name: drawer,
-      page: () => MenuDrawer()
-    ),
-    GetPage(
-      name: loginClone,
-      page: () => LoginClonePage()
-    ),
+    )
   ];
 }

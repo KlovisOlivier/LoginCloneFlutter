@@ -1,36 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomTextfield extends StatelessWidget {
-  final String hintText;
-  final bool isPassword;
+  // kita list variabel2 yang diperlukan
+  final TextEditingController txtController;
+  final String myHint;
+  final bool isNumberOnly;
 
   const CustomTextfield({
-    Key? key,
-    required this.hintText,
-    this.isPassword = false,
-  }) : super(key: key);
+    super.key,
+    required this.txtController,
+    required this.myHint,
+    required this.isNumberOnly,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      obscureText: isPassword,
+      controller: txtController,
+      keyboardType: isNumberOnly ? TextInputType.number : TextInputType.text,
+      inputFormatters: isNumberOnly
+          ? [FilteringTextInputFormatter.digitsOnly]
+          : [],
       decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
-        filled: true,
-        fillColor: const Color(0xFFFAFAFA),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
-          borderSide: const BorderSide(color: Color(0xFFDBDBDB)),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
-          borderSide: const BorderSide(color: Color(0xFFDBDBDB)),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(6),
-          borderSide: const BorderSide(color: Color(0xFFA8A8A8)),
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+        hint: Text(myHint),
       ),
     );
   }

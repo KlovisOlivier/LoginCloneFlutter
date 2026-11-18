@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pakaji/controller/main_menu_controller.dart';
-import 'package:pakaji/menu/history.dart';
-import 'package:pakaji/menu/home.dart';
 import 'package:get/get.dart';
 
 class MainMenuPage extends StatelessWidget {
@@ -26,8 +24,8 @@ class MainMenuPage extends StatelessWidget {
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.history_outlined),
-              label: "History",
+              icon: Icon(Icons.person_add_alt_rounded),
+              label: "Feat",
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_outline),

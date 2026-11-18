@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:pakaji/menu/history.dart';
+import 'package:pakaji/menu/feat.dart';
 import 'package:pakaji/menu/home.dart';
 import 'package:pakaji/menu/profile.dart';
 import 'package:get/get.dart';
@@ -11,5 +11,9 @@ class MainMenuController extends GetxController {
     selectedIndex.value = index;
   }
 
-  List<Widget> listPages = [HomePage(), HistoryPage(), ProfilePage()];
+  final List<Widget> listPages = [
+    HomePage(),
+    const FeatPage(),
+    const ProfilePage(),
+  ];
 }

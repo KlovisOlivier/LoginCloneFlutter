@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "My Learning App",
-      initialRoute: Routes.loginClone,
+      initialRoute: Routes.login_page,
       getPages: Routes.pages,
     );
   }
